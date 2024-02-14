@@ -4,33 +4,41 @@ import Card from "./Card";
 
 const projects = [
   {
-    title: "React Space",
-    description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
-    // getImageSrc: () => require("../images/photo1.jpg"),
+    title: "React Calculator",
+    description: "Simple Calculator built with React, using hooks and context to manage state",
+    getImageSrc: () => require("../images/raspberryPi.png"),
   },
   {
-    title: "React Infinite Scroll",
-    description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
-    // getImageSrc: () => require("../images/photo2.jpg"),
+    title: "Device Movement Detection",
+    description: "Python implementation tracking rotational movement of a milimiter wave radar.",
+    getImageSrc: () => require("../images/raspberryPi.png"),
   },
   {
-    title: "Photo Gallery",
+    title: "Image Quality Control",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    // getImageSrc: () => require("../images/photo3.jpg"),
+      "Machine learning implementation using YOLOv5 to detect unwanted elements in images.",
+    getImageSrc: () => require("../images/raspberryPi.png"),
   },
   {
-    title: "Event planner",
-    description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    // getImageSrc: () => require("../images/photo4.jpg"),
+    title: "GPIB Bus Controller",
+    description: "GPIB bus to remotely control hardware instruments connected to a raspberry pi.",
+    getImageSrc: () => require("../images/raspberryPi.png"),
   },
 ];
 
 const ProjectsSection = () => {
-  return null;
+  return (
+    <div className="projects-container">
+      {projects.map((project, index) => (
+        <Card
+          key={index}
+          title={project.title}
+          description={project.description}
+          imageSrc={project.getImageSrc()}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ProjectsSection;

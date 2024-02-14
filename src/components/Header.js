@@ -3,11 +3,11 @@ import githubLogo from "../images/githubLogo.png";
 import linkedinLogo from "../images/linkedinLogo.png";
 import emailLogo from "../images/emailLogo.png";
 import "./components.css";
-
+// TODO: Add resume and transcript
 const socials = [
   {
     icon: emailLogo,
-    url: "mailto: hello@example.com",
+    url: "mailto: ching.ryan123@gmail.com",
   },
   {
     icon: githubLogo,
@@ -28,6 +28,12 @@ const Header = () => {
           <img className="social-icon" src={social.icon} alt="social icon" />
         </a>
       ))}
+      <a key="4" href={"./projects"} target="_blank" rel="noreferrer">
+        <h1>Projects</h1>
+      </a>
+      <a key="5" href={"./contact"} target="_blank" rel="noreferrer">
+        <h1>Contact Me</h1>
+      </a>
     </div>
   );
 };

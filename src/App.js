@@ -1,5 +1,8 @@
+import ContactMeSection from "./components/ContactMeSection";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
-// import LandingSection from "./components/LandingSection";
+import ProjectsSection from "./components/ProjectsSection";
+import LandingSection from "./components/LandingSection";
 // import ProjectsSection from "./components/ProjectsSection";
 // import ContactMeSection from "./components/ContactMeSection";
 // import Footer from "./components/Footer";
@@ -9,8 +12,10 @@ import Header from "./components/Header";
 function App() {
   return (
     <main>
-      <h1>TEST</h1>
       <Header />
+      <LandingSection />
+      <ProjectsSection />
+      <Footer />
     </main>
   );
 }
