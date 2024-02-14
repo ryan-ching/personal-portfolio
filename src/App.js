@@ -15,6 +15,7 @@ function App() {
       <Header />
       <LandingSection />
       <ProjectsSection />
+      <ContactMeSection />
       <Footer />
     </main>
   );
