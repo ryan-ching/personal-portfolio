@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Card.css";
 const Card = ({ title, description, imageSrc }) => {
   // Implement the UI for the Card component according to the instructions.
   // You should be able to implement the component with the elements imported above.
@@ -7,7 +7,7 @@ const Card = ({ title, description, imageSrc }) => {
   return (
     <div className="card-container">
       <img src={imageSrc} alt="project" />
-      <h3>{title}</h3>
+      <h1>{title}</h1>
       <p>{description}</p>
     </div>
   );

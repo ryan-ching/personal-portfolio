@@ -11,7 +11,7 @@ const bioEducation =
 // Use a combination of Avatar, Heading and VStack components.
 const LandingSection = () => {
   return (
-    <div>
+    <div className="fullscreen-section">
       <h1>{greeting}</h1>
       <h2>{bioGoal}</h2>
       <h2>{bioEducation}</h2>

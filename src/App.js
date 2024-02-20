@@ -9,10 +9,21 @@ import LandingSection from "./components/LandingSection";
 // import { AlertProvider } from "./context/alertContext";
 // import Alert from "./components/Alert";
 
+import { useEffect, useState } from "react";
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main>
-      <Header />
+      <Header isHidden={isScrolled} />
       <LandingSection />
       <ProjectsSection />
       <ContactMeSection />

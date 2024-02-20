@@ -19,9 +19,19 @@ const socials = [
   },
 ];
 
-const Header = () => {
+const Header = ({ isHidden }) => {
+  const handleClick = (anchor) => () => {
+    const id = `${anchor}-section`;
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
-    <div className="header-container">
+    <div className={isHidden ? "header-container-hidden" : "header-container"}>
       <h1>Ryan Ching</h1>
       {socials.map((social, index) => (
         <a key={index} href={social.url} target="_blank" rel="noreferrer">
