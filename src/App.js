@@ -6,10 +6,11 @@ import LandingSection from "./components/LandingSection";
 // import ProjectsSection from "./components/ProjectsSection";
 // import ContactMeSection from "./components/ContactMeSection";
 // import Footer from "./components/Footer";
-// import { AlertProvider } from "./context/alertContext";
-// import Alert from "./components/Alert";
+import Alert from "./components/Alert";
 
 import { useEffect, useState } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { AlertProvider } from "./context/alertContext";
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -22,13 +23,18 @@ function App() {
   }, []);
 
   return (
-    <main>
-      <Header isHidden={isScrolled} />
-      <LandingSection />
-      <ProjectsSection />
-      <ContactMeSection />
-      <Footer />
-    </main>
+    <ChakraProvider>
+      <AlertProvider>
+          <main>
+            <Header isHidden={isScrolled} />
+            <LandingSection />
+            <ProjectsSection />
+            <ContactMeSection />
+            <Footer />
+          </main>
+      </AlertProvider>
+    </ChakraProvider>
+    
   );
 }
 
