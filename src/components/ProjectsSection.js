@@ -1,43 +1,62 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
+import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
 const projects = [
   {
-    title: "React Calculator",
-    description: "Simple Calculator built with React, using hooks and context to manage state",
-    getImageSrc: () => require("../images/raspberryPi.png"),
-  },
-  {
-    title: "Device Movement Detection",
-    description: "Python implementation tracking rotational movement of a milimiter wave radar.",
-    getImageSrc: () => require("../images/raspberryPi.png"),
-  },
-  {
-    title: "Image Quality Control",
+    title: "React Space",
     description:
-      "Machine learning implementation using YOLOv5 to detect unwanted elements in images.",
-    getImageSrc: () => require("../images/raspberryPi.png"),
+      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+    getImageSrc: () => require("../images/githubLogo.png"),
   },
   {
-    title: "GPIB Bus Controller",
-    description: "GPIB bus to remotely control hardware instruments connected to a raspberry pi.",
-    getImageSrc: () => require("../images/raspberryPi.png"),
+    title: "React Infinite Scroll",
+    description:
+      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+    getImageSrc: () => require("../images/githubLogo.png"),
+  },
+  {
+    title: "Photo Gallery",
+    description:
+      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
+    getImageSrc: () => require("../images/githubLogo.png"),
+  },
+  {
+    title: "Event planner",
+    description:
+      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
+    getImageSrc: () => require("../images/githubLogo.png"),
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <div className="projects-container">
-      {projects.map((project, index) => (
-        <Card
-          key={index}
-          title={project.title}
-          description={project.description}
-          imageSrc={project.getImageSrc()}
-        />
-      ))}
-    </div>
+    <FullScreenSection
+      backgroundColor="#14532d"
+      isDarkBackground
+      p={8}
+      alignItems="flex-start"
+      spacing={8}
+    >
+      <Heading as="h1" id="projects-section">
+        Featured Projects
+      </Heading>
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(2,minmax(0,1fr))"
+        gridGap={8}
+      >
+        {projects.map((project) => (
+          <Card
+            key={project.title}
+            title={project.title}
+            description={project.description}
+            imageSrc={project.getImageSrc()}
+          />
+        ))}
+      </Box>
+    </FullScreenSection>
   );
 };
 

@@ -1,30 +1,91 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
+import { useFormik } from "formik";
+import {
+  Box,
+  Button,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Heading,
+  Input,
+  Select,
+  Textarea,
+  VStack,
+} from "@chakra-ui/react";
+import * as Yup from 'yup';
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
-import { useAlertContext } from "../context/alertContext";
+import {useAlertContext} from "../context/alertContext";
 
-const ContactMeSection = () => {
-  const { isLoading, response, submit } = useSubmit();
-  // const { onOpen } = useAlertContext();
+const LandingSection = () => {
+  const {isLoading, response, submit} = useSubmit();
+  const { onOpen } = useAlertContext();
+
+  const formik = useFormik({
+    initialValues: {},
+    onSubmit: (values) => {},
+    validationSchema: Yup.object({}),
+  });
 
   return (
-    <div className="contact-me">
-      <h1>Contact Me</h1>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const formData = new FormData(e.target);
-          submit(formData);
-        }}>
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Message" required />
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "Sending..." : "Send"}
-        </button>
-      </form>
-    </div>
+    <FullScreenSection
+      isDarkBackground
+      backgroundColor="#512DA8"
+      py={16}
+      spacing={8}
+    >
+      <VStack w="1024px" p={32} alignItems="flex-start">
+        <Heading as="h1" id="contactme-section">
+          Contact me
+        </Heading>
+        <Box p={6} rounded="md" w="100%">
+          <form>
+            <VStack spacing={4}>
+              <FormControl isInvalid={false}>
+                <FormLabel htmlFor="firstName">Name</FormLabel>
+                <Input
+                  id="firstName"
+                  name="firstName"
+                />
+                <FormErrorMessage></FormErrorMessage>
+              </FormControl>
+              <FormControl isInvalid={false}>
+                <FormLabel htmlFor="email">Email Address</FormLabel>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                />
+                <FormErrorMessage></FormErrorMessage>
+              </FormControl>
+              <FormControl>
+                <FormLabel htmlFor="type">Type of enquiry</FormLabel>
+                <Select id="type" name="type">
+                  <option value="hireMe">Freelance project proposal</option>
+                  <option value="openSource">
+                    Open source consultancy session
+                  </option>
+                  <option value="other">Other</option>
+                </Select>
+              </FormControl>
+              <FormControl isInvalid={false}>
+                <FormLabel htmlFor="comment">Your message</FormLabel>
+                <Textarea
+                  id="comment"
+                  name="comment"
+                  height={250}
+                />
+                <FormErrorMessage></FormErrorMessage>
+              </FormControl>
+              <Button type="submit" colorScheme="purple" width="full">
+                Submit
+              </Button>
+            </VStack>
+          </form>
+        </Box>
+      </VStack>
+    </FullScreenSection>
   );
 };
 
-export default ContactMeSection;
+export default LandingSection;
