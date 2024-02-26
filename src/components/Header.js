@@ -8,27 +8,24 @@ import {
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
+import emailLogo from "../images/emailLogo.png";
+import githubLogo from "../images/githubLogo.png";
+import linkedinLogo from "../images/linkedinLogo.png";
+import "./Header.css";
+
 
 const socials = [
   {
-    icon: faEnvelope,
+    icon: emailLogo,
     url: "mailto: hello@example.com",
   },
   {
-    icon: faGithub,
+    icon: githubLogo,
     url: "https://github.com",
   },
   {
-    icon: faLinkedin,
+    icon: linkedinLogo,
     url: "https://www.linkedin.com",
-  },
-  {
-    icon: faMedium,
-    url: "https://medium.com",
-  },
-  {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com",
   },
 ];
 
@@ -64,18 +61,21 @@ const Header = () => {
           alignItems="center"
         >
           <nav>
-          {socials.map((social, index) => (
-            <a key={index} href={social.url} target="_blank" rel="noreferrer">
-              <img className="social-icon" src={social.icon} alt="social icon" />
-            </a>
-          ))}
+            <HStack spacing={8}>
+              {socials.map((social, index) => (
+                <a key={index} href={social.url} target="_blank" rel="noreferrer">
+                  <img className="social-icon" src={social.icon} alt="social icon"/>
+                </a>
+              ))}
+            </HStack>
+            
           </nav>
           <nav>
             <HStack spacing={8}>
-            <a key="4" href={"./projects"} target="_blank" rel="noreferrer">
+            <a key="4" href={"/#projects"} target="_blank" rel="noreferrer">
               <h1>Projects</h1>
             </a>
-            <a key="5" href={"./contact"} target="_blank" rel="noreferrer">
+            <a key="5" href={"/#contact-me"} target="_blank" rel="noreferrer">
               <h1>Contact Me</h1>
             </a>
             </HStack>
