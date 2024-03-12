@@ -29,22 +29,14 @@ const LandingSection = () => {
       comment: "",
     },
     onSubmit: async (values) => {
-      try {
-        const response = await submit(values);
-        onOpen(response.type, response.message);
-      } catch (error) {
-        onOpen("error", "Something went wrong, please try again later!");
-      }
+      submit(values.firstName);
+      formik.resetForm();
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
-      email: Yup.string()
-        .required("Required")
-        .email("Invalid email address"),
-      type: Yup.string().required("Optional"),
-      comment: Yup.string()
-        .required("Required")
-        .min(25, "Must be at least 25 characters"),
+      email: Yup.string().email("Invalid email address").required("Required"),
+      type: Yup.string(),
+      comment: Yup.string().required("Required").min(25, "Must be at least 25 characters"),
     }),
   });
 
@@ -102,8 +94,8 @@ const LandingSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full">
-                {formik.isSubmitting ? "Submitting..." : "Submit"}
+              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading}>
+                Submit
               </Button>
             </VStack>
           </form>

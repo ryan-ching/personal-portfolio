@@ -11,14 +11,33 @@ export const AlertProvider = ({ children }) => {
     message: 'message submitted successfully!',
   });
 
-  return (
-    <AlertContext.Provider
-      value={{
+    const onOpen = (type, message) => {
+      setState({
         ...state,
-        onOpen: (type, message) => setState({ isOpen: true, type, message }),
-        onClose: () => setState({ isOpen: false, type: '', message: '' }),
-      }}
-    >
+        type,
+        message,
+        isOpen: true,
+      });
+    };
+
+    const onClose = () => {
+      setState({
+        ...state,
+        isOpen: false,
+        type: "success",
+        message: "Message submitted successfully!",
+      });
+    };
+
+    const alertValue = {
+      isOpen: state.isOpen,
+      alertType: state.type,
+      alertMessage: state.message,
+      onOpen,
+      onClose,
+    }
+  return (
+    <AlertContext.Provider value={alertValue}>
       {children}
     </AlertContext.Provider>
   );
