@@ -13,11 +13,11 @@ function App() {
       <AlertProvider>
         <main>
           <Header />
-          <LandingSection />
+          {/* <LandingSection />
           <ProjectsSection />
           <ContactMeSection />
           <Footer />
-          <Alert />
+          <Alert /> */}
         </main>
       </AlertProvider>
     </ChakraProvider>

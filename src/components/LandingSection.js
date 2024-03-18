@@ -1,11 +1,12 @@
 import React from "react";
-import { Avatar, Heading, VStack } from "@chakra-ui/react";
+import { Avatar, Heading, VStack, HStack, Text} from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import profileImg from "../images/profileImg.png";
+import profilePic from "../images/profilePic.png";
 const greeting = "Hello, I am Ryan!";
-const bio1 = "A frontend developer";
-const bio2 = "specialised in React";
-
+const languages1 = "Languages (Proficient): HTML, CSS, JavaScript, React, Python, Java, C++";
+const languages2 = "Languages (Familiar): Java, C, C#, JavaScript, MATLAB, Swift";
+const libraries = "Libraries: React, Node.js, PyTorch, SciPy, Pandas, DGL"
+const tools = "Tools: Git, Jupyter Notebooks, LaTeX, Vim"
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
 const LandingSection = () => (
@@ -16,17 +17,28 @@ const LandingSection = () => (
     backgroundColor="#2A4365"
   >
     <VStack spacing={4}>
-      <Avatar size="2xl" name="Pete" src={profileImg} />
+      <Avatar size="2xl" name="Pete" src={profilePic} />
       <Heading as="h1" size="2xl" color="white">
         {greeting}
       </Heading>
-      <Heading as="h2" size="lg" color="white">
-        {bio1}
-      </Heading>
-      <Heading as="h2" size="lg" color="white">
-        {bio2}
-      </Heading>
+      <Text fontSize="2xl" color="white" align="center">
+        I am a recent graduate from the University of Washington (June 2023) where I studied Electrical 
+        and Computer Engineering. I am currently seeking full time roles in Software Engineering! This
+        website is a highlight of some of my projects and experiences. 
+        This website was built using React and Chakra UI.
+      </Text>
     </VStack>
+    <HStack spacing={10} paddingTop={10}>
+      <VStack spacing={2}>
+        <Heading as="h2" size="md" color="white">{languages1}</Heading>
+        <Heading as="h2" size="md" color="white">{languages2}</Heading>
+      </VStack> 
+      <VStack spacing={2}>
+        <Heading as="h2" size="md" color="white">{libraries}</Heading>
+        <Heading as="h2" size="md" color="white">{tools}</Heading>
+      </VStack>
+    </HStack>
+    
   </FullScreenSection>
 );
 

@@ -9,6 +9,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import LandingSection from "./LandingSection";
+import ProjectsSection from "./ProjectsSection";
+import ContactMeSection from "./ContactMeSection";
+import EducationSection from "./EducationSection";
 import emailLogo from "../images/emailLogo.png";
 import githubLogo from "../images/githubLogo.png";
 import linkedinLogo from "../images/linkedinLogo.png";
@@ -22,11 +26,11 @@ const socials = [
   },
   {
     icon: githubLogo,
-    url: "https://github.com",
+    url: "https://github.com/ryan-ching",
   },
   {
     icon: linkedinLogo,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/in/ching-ryan/",
   },
 ];
 
@@ -43,47 +47,29 @@ const Header = () => {
   };
 
   return (
-    <Box
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      translateY={0}
-      transitionProperty="transform"
-      transitionDuration=".3s"
-      transitionTimingFunction="ease-in-out"
-      backgroundColor="#18181b"
-    >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
-        <HStack
-          px={16}
-          py={4}
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <nav>
-            <HStack spacing={8}>
-              {socials.map((social, index) => (
-                <a key={index} href={social.url} target="_blank" rel="noreferrer">
-                  <img className="social-icon" src={social.icon} alt="social icon"/>
-                </a>
-              ))}
-            </HStack>
-            
-          </nav>
-          <nav>
-            <HStack spacing={8}>
-            <a key="4" href={"/#projects"} target="_blank" rel="noreferrer">
-              <h1>Projects</h1>
-            </a>
-            <a key="5" href={"/#contact-me"} target="_blank" rel="noreferrer">
-              <h1>Contact Me</h1>
-            </a>
-            </HStack>
-          </nav>
-        </HStack>
-      </Box>
-    </Box>
+    <Tabs>
+      <TabList>
+        <Tab>About Me</Tab>
+        <Tab>Education</Tab>
+        <Tab>Projects</Tab>
+        <Tab>Contact Me</Tab>
+      </TabList>
+
+      <TabPanels>
+        <TabPanel>
+          <LandingSection />
+        </TabPanel>
+        <TabPanel>
+          <EducationSection />
+        </TabPanel>
+        <TabPanel>
+          <ProjectsSection />
+        </TabPanel>
+        <TabPanel>
+          <ContactMeSection />
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 };
 export default Header;

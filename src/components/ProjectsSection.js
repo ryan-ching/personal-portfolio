@@ -3,6 +3,8 @@ import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
+// Add a sorting function to sort projects by date
+// add a vertical navigation bar
 const projects = [
   {
     title: "Device Movement Detection - UW ENGINE Capstone",
