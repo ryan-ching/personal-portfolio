@@ -44,7 +44,7 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
+      backgroundColor="#000000"
       py={16}
       spacing={8}
     >
