@@ -1,7 +1,10 @@
 import React from "react";
-import { Avatar, Heading, VStack, HStack, Text} from "@chakra-ui/react";
+import { Avatar, Heading, VStack, HStack, Text, Button} from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import profilePic from "../images/profilePic.png";
+import emailLogo from "../images/emailLogo.png";
+import githubLogo from "../images/githubLogo.png";
+import linkedinLogo from "../images/linkedinLogo.png";
 const greeting = "Hello, I am Ryan!";
 const languages1 = "Languages (Proficient): HTML, CSS, JavaScript, React, Python, Java, C++";
 const languages2 = "Languages (Familiar): Java, C, C#, JavaScript, MATLAB, Swift";
@@ -9,6 +12,25 @@ const libraries = "Libraries: React, Node.js, PyTorch, SciPy, Pandas, DGL"
 const tools = "Tools: Git, Jupyter Notebooks, LaTeX, Vim"
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
+// TODO: Add resume download option
+const socials = [
+  {
+    icon: emailLogo,
+    url: "mailto: hello@example.com",
+    title: "Email Me"
+  },
+  {
+    icon: githubLogo,
+    url: "https://github.com/ryan-ching",
+    title: "Github"
+  },
+  {
+    icon: linkedinLogo,
+    url: "https://www.linkedin.com/in/ching-ryan/",
+    title: "Linkedin"
+  },
+];
+
 const LandingSection = () => (
   <FullScreenSection
     justifyContent="center"
@@ -17,7 +39,7 @@ const LandingSection = () => (
     backgroundColor="#000000"
   >
     <VStack spacing={4}>
-      <Avatar size="2xl" name="Pete" src={profilePic} />
+      <Avatar size="3xl" name="Ryan" src={profilePic} />
       <Heading as="h1" size="2xl" color="white">
         {greeting}
       </Heading>
@@ -37,6 +59,18 @@ const LandingSection = () => (
         <Heading as="h2" size="md" color="white">{libraries}</Heading>
         <Heading as="h2" size="md" color="white">{tools}</Heading>
       </VStack>
+    </HStack>
+    <HStack spacing={4} paddingTop={10}>
+      {socials.map((social) => (
+        <a
+          key={social.url}
+          href={social.url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Button colorScheme="white" variant='outline' size="lg">{social.title}</Button>
+        </a>
+      ))}
     </HStack>
     
   </FullScreenSection>

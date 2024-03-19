@@ -13,26 +13,11 @@ import LandingSection from "./LandingSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactMeSection from "./ContactMeSection";
 import EducationSection from "./EducationSection";
-import emailLogo from "../images/emailLogo.png";
-import githubLogo from "../images/githubLogo.png";
-import linkedinLogo from "../images/linkedinLogo.png";
+
 import "./Header.css";
 
 
-const socials = [
-  {
-    icon: emailLogo,
-    url: "mailto: hello@example.com",
-  },
-  {
-    icon: githubLogo,
-    url: "https://github.com/ryan-ching",
-  },
-  {
-    icon: linkedinLogo,
-    url: "https://www.linkedin.com/in/ching-ryan/",
-  },
-];
+
 
 const Header = () => {
   const handleClick = (anchor) => () => {
@@ -47,26 +32,23 @@ const Header = () => {
   };
 
   return (
-    <Tabs>
+    <Tabs isFitted variant='enclosed' style={{ backgroundColor: 'black', color: 'white'}}>
       <TabList>
-        <Tab>About Me</Tab>
-        <Tab>Education</Tab>
-        <Tab>Projects</Tab>
-        <Tab>Contact Me</Tab>
+        <Tab _selected={{color: 'black', bg:"white"}}>About Me</Tab>
+        <Tab _selected={{color: 'black', bg:"white"}}>Education</Tab>
+        <Tab _selected={{color: 'black', bg:"white"}}>Projects</Tab>
       </TabList>
 
       <TabPanels>
         <TabPanel>
           <LandingSection />
+          <ContactMeSection />
         </TabPanel>
         <TabPanel>
           <EducationSection />
         </TabPanel>
         <TabPanel>
           <ProjectsSection />
-        </TabPanel>
-        <TabPanel>
-          <ContactMeSection />
         </TabPanel>
       </TabPanels>
     </Tabs>
