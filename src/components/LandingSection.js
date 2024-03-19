@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Heading, VStack, HStack, Text, Button} from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import profilePic from "../images/profilePic.png";
+import profilePic from "../images/profilePic.jpg";
 import emailLogo from "../images/emailLogo.png";
 import githubLogo from "../images/githubLogo.png";
 import linkedinLogo from "../images/linkedinLogo.png";
@@ -13,6 +13,7 @@ const tools = "Tools: Git, Jupyter Notebooks, LaTeX, Vim"
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
 // TODO: Add resume download option
+// TODO: Add pop ups for education section showing relevant courses
 const socials = [
   {
     icon: emailLogo,
@@ -39,15 +40,14 @@ const LandingSection = () => (
     backgroundColor="#000000"
   >
     <VStack spacing={4}>
-      <Avatar size="3xl" name="Ryan" src={profilePic} />
+      <Avatar size= "2xl" name="Ryan" src={profilePic} />
       <Heading as="h1" size="2xl" color="white">
         {greeting}
       </Heading>
-      <Text fontSize="2xl" color="white" align="center">
+      <Text fontSize="2xl" color="white" align="center" maxW="75vh">
         I am a recent graduate from the University of Washington (June 2023) where I studied Electrical 
         and Computer Engineering. I am currently seeking full time roles in Software Engineering! This
-        website is a highlight of some of my projects and experiences. 
-        This website was built using React and Chakra UI.
+        website is a highlight of some of my projects and experiences.
       </Text>
     </VStack>
     <HStack spacing={10} paddingTop={10}>

@@ -14,6 +14,8 @@ import {
 import Card from "./Card";
 import uwLogo from "../images/uw_logo.png";
 import courseraLogo from "../images/courseraLogo.png";
+
+//TODO: Fix the scaling on the education section when changing window size
 const degrees = [
   {
     school: "University of Washington",
