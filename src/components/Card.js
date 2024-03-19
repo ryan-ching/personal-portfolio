@@ -1,20 +1,25 @@
-import { Heading, HStack, Highlight, Image, Text, VStack } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Heading, HStack, Badge, Highlight, Image, Text, VStack, Box, Tag } from "@chakra-ui/react";
 import React from "react";
 
-const Card = ({ title, date, description, imageSrc }) => {
-  // Implement the UI for the Card component according to the instructions.
-  // You should be able to implement the component with the elements imported above.
-  // Feel free to import other UI components from Chakra UI if you wish to.
-  
+const Card = ({ title, date, description, imageSrc, tags}) => {
   return (
-  <VStack class = "card-container">
-    <Image src = {imageSrc} />
-    <Heading>{title}</Heading>
-    <Text>{date}</Text>
-    <Text>{description}</Text>
-  </VStack>
+    <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' backgroundColor="black">
+      <Image src={imageSrc} alt={title} maxH="50%"/>
+        <Box d='flex' alignItems='baseline'>
+          <Box>
+            <Text color='white' fontWeight='bold'>{title}</Text>
+            {tags.map((tag) => (
+                <Tag key={tag} backgroundColor="white" textColor="black" mr={2}>
+                  {tag}
+                </Tag>
+              ))}
+            <Text color='white' fontWeight='semibold'>{description}</Text>
+          </Box>
+          <Box>
+            <Text color='white' fontWeight='semibold'>{date}</Text>
+          </Box>
+        </Box>
+      </Box>
   );
 };
 

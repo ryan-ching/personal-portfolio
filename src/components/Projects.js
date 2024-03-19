@@ -1,6 +1,7 @@
 export const projects = [
     {
       title: "Device Movement Detection - UW ENGINE Capstone",
+      year: "2023",
       date: "January 2023 - June 2023",
       description:
         <list>
@@ -15,6 +16,7 @@ export const projects = [
     },
     {
       title: "Software Engineer Intern - Papaya IoT",
+      year: "2021",
       date: "May 2021 - September 2021",
       description:
         "GPIB instrument (Agilent, Keysight, Keithley) driver development and API for users to control measurement equipment in R&D and test environment.",
@@ -23,6 +25,7 @@ export const projects = [
     },
     {
       title: "Image Quality Control - UW ENGINE Capstone",
+      year: "2022",
       date: "January 2022 - June 2022",
       description:
         <list>
@@ -36,14 +39,15 @@ export const projects = [
     },
     {
       title: "Graduate Researcher - UW Applied Phsycics Lab",
+      year: "2022",
       date: "June 2022 - December 2022",
       description:
       <list>
         <li>
-        Given a video of moving objects, created a graph based on the spatial and temporal location of objects. Detected and tracked the movement of each detection. (Python, Deep Graph Library (DGL), NetworkX)
+        Given a video of moving objects, created a graph based on the spatial and temporal location of objects. Detected and tracked the movement of each detection.
         </li>
         <li>
-        Developed web application, where a user uploads images and a resulting image displays all detection locations of logos, watermarks, etc. (Flask)
+        Created a bipartite graph based on position and time to track the movement of each detection.
         </li>
       </list>,
       getImageSrc: () => require("../images/githubLogo.png"),
@@ -51,6 +55,7 @@ export const projects = [
     },
     {
       title: "FPGA Pong Game",
+      year: "2021",
       date: "January 2021 - Febuary 2021",
       description:
       <list>
@@ -63,6 +68,7 @@ export const projects = [
     },
     {
       title: "FPGA Flappy Bird Game",
+      year: "2020",
       date: "November 2020 - December 2020",
       description:
       <list>
@@ -75,6 +81,7 @@ export const projects = [
     },
     {
       title: "Intern - Sound Sustainability",
+      year: "2021",
       date: "May 2021 - August 2021",
       description:
       <list>
@@ -86,6 +93,7 @@ export const projects = [
     },
     {
       title: "Personal Website",
+      year: "2024",
       date: "Febuary 2024 - Present",
       description:
       <list>
@@ -96,6 +104,7 @@ export const projects = [
     },
     {
       title: "Undergraduate Researcher - University of Washington",
+      year: "2020",
       date: "November 2020 - December 2020",
       description:
       <list>
@@ -106,27 +115,8 @@ export const projects = [
       tags: ["Research", "Machine Learning", "Python"],
     },
     {
-      title: "Personal Website",
-      date: "Febuary 2024 - Present",
-      description:
-      <list>
-        <li>Coded personal website using React and Chakra UI.</li>
-      </list>,
-      getImageSrc: () => require("../images/githubLogo.png"),
-      tags: ["Personal", "Javascript", "React"],
-    },
-    {
       title: "Pipelined CPU",
-      date: "October 2021- December 2021",
-      description:
-      <list>
-        <li> Developed a 5-stage pipelined CPU with ALU and memory functions using forwarding and delay slots.</li>
-      </list>,
-      getImageSrc: () => require("../images/githubLogo.png"),
-      tags: ["School", "SystemVerilog"],
-    },
-    {
-      title: "Pipelined CPU",
+      year: "2021",
       date: "October 2021- December 2021",
       description:
       <list>

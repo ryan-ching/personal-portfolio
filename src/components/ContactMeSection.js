@@ -35,7 +35,6 @@ const LandingSection = () => {
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      type: Yup.string(),
       comment: Yup.string().required("Required").min(25, "Must be at least 25 characters"),
     }),
   });
@@ -73,16 +72,6 @@ const LandingSection = () => {
                   type="email"
                 />
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-              </FormControl>
-              <FormControl>
-                <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select {...formik.getFieldProps('type')} id="type" name="type">
-                  <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">
-                    Open source consultancy session
-                  </option>
-                  <option value="other">Other</option>
-                </Select>
               </FormControl>
               <FormControl isInvalid={formik.touched.comment && formik.errors.comment}>
                 <FormLabel htmlFor="comment">Your message</FormLabel>

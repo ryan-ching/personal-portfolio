@@ -61,8 +61,8 @@ const EducationSection = () => {
       alignItems="flex-start"
       spacing={8}
     >
-      <VStack>
-        <Heading as="h1" id="education-section">Education</Heading>
+      <VStack minWidth="75vh">
+        <Heading as="h1" id="education-section" padding="10%">Education</Heading>
         <Box
           display="grid"
           gridTemplateColumns="repeat(1,minmax(0,1fr))"
@@ -74,15 +74,15 @@ const EducationSection = () => {
                 <Image src={degree.img} alt="uwLogo"/> 
               </Box>
               <Box boxsize="lg" maxWidth="100%">
-                <Heading as="h2" size="lg" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{degree.major} - {degree.degree}</Heading>
-                <Heading as="h2" size="m" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{degree.school}</Heading>
-                <Heading as="h2" size="m" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{degree.date}</Heading>
-                <Heading as="h2" size="m" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{degree.status}</Heading>
+                <Heading as="h2" size="lg" color="white" justifyContent="space-between"><span>{degree.major}</span> - <span>{degree.degree}</span></Heading>
+                <Heading as="h2" size="m" color="white" >{degree.school}</Heading>
+                <Heading as="h2" size="m" color="white" >{degree.date}</Heading>
+                <Heading as="h2" size="m" color="white">{degree.status}</Heading>
               </Box>
             </Box>
           ))}
         </Box>
-        <Heading as="h1" id="self-learning-section">Self Learning</Heading>
+        <Heading as="h1" id="self-learning-section" padding="10%">Self Learning</Heading>
         <Box
           display="grid"
           gridTemplateColumns="repeat(1,minmax(0,1fr))"
@@ -94,10 +94,10 @@ const EducationSection = () => {
               <Image src={course.img} alt="courseraLogo"/> 
             </Box>
             <Box boxsize="lg" maxWidth="100%">
-              <Heading as="h2" size="lg" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{course.title}</Heading>
-              <Heading as="h2" size="m" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{course.source}</Heading>
-              <Heading as="h2" size="m" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{course.date}</Heading>
-              <Heading as="h2" size="m" color="white" maxWidth={width <= 768 ? '80vw' : '200px'}>{course.concentration}</Heading>
+              <Heading as="h2" size="lg" color="white">{course.title}</Heading>
+              <Heading as="h2" size="m" color="white">{course.source}</Heading>
+              <Heading as="h2" size="m" color="white">{course.date}</Heading>
+              <Heading as="h2" size="m" color="white">{course.status}</Heading>
             </Box>
           </Box>
           ))}
