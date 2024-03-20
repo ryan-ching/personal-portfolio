@@ -57,10 +57,11 @@ const EducationSection = () => {
   }, [])
   return (
     <FullScreenSection
-      backgroundColor="#000000"
+      justifyContent="center"
+      backgroundColor="black"
       isDarkBackground
       p={8}
-      alignItems="flex-start"
+      alignItems="center"
       spacing={8}
     >
       <VStack minWidth="75vh">

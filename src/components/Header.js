@@ -7,13 +7,11 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Slide } from '@chakra-ui/react'
+import { Box, Tabs, TabList, TabPanels, Tab, TabPanel, Switch } from '@chakra-ui/react'
 import LandingSection from "./LandingSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactMeSection from "./ContactMeSection";
 import EducationSection from "./EducationSection";
-
 
 
 
@@ -23,22 +21,21 @@ const Header = () => {
 
   return (
     <Tabs variant='soft-rounded' style={{ backgroundColor: 'black', color: 'white'}}>
-      <TabList style={{padding: '2vh'}}>
-        <Tab _selected={{color: 'black', bg:"white"}} _hover={{color: 'white'}}>About Me</Tab>
-        <Tab _selected={{color: 'black', bg:"white"}} _hover={{color: 'white'}}>Projects</Tab>
-      </TabList>
-
-      <TabPanels>
-        <TabPanel>
-            <LandingSection />
-            <EducationSection />
-            <ContactMeSection />
-        </TabPanel>
-        <TabPanel>
-          <ProjectsSection />
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+    <TabList style={{padding: '2vh'}}>
+      <Tab _selected={{color: 'black', bg:"white"}} _hover={{color: 'white'}}>About Me</Tab>
+      <Tab _selected={{color: 'black', bg:"white"}} _hover={{color: 'white'}}>Projects</Tab>
+    </TabList>
+    <TabPanels>
+      <TabPanel>
+          <LandingSection />
+          <EducationSection />
+          {/* <ContactMeSection /> */}
+      </TabPanel>
+      <TabPanel>
+        <ProjectsSection />
+      </TabPanel>
+    </TabPanels>
+  </Tabs>
   );
 };
 export default Header;

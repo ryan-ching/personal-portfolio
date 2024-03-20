@@ -5,7 +5,6 @@ import profilePic from "../images/profilePic.jpg";
 import emailLogo from "../images/emailLogo.png";
 import githubLogo from "../images/githubLogo.png";
 import linkedinLogo from "../images/linkedinLogo.png";
-const greeting = "Hello, I am Ryan!";
 const languages1 = "Languages (Proficient): HTML, CSS, JavaScript, React, Python, Java, C++";
 const languages2 = "Languages (Familiar): Java, C, C#, JavaScript, MATLAB, Swift";
 const libraries = "Libraries: React, Node.js, PyTorch, SciPy, Pandas, DGL"
@@ -17,7 +16,7 @@ const tools = "Tools: Git, Jupyter Notebooks, LaTeX, Vim"
 const socials = [
   {
     icon: emailLogo,
-    url: "mailto: hello@example.com",
+    url: "mailto: rchingwebsite@gmail.com",
     title: "Email Me"
   },
   {
@@ -42,10 +41,10 @@ const LandingSection = () => (
     <VStack spacing={4}>
       <Avatar size= "2xl" name="Ryan" src={profilePic} />
       <Heading as="h1" size="2xl" color="white">
-        {greeting}
+        Ryan Ching
       </Heading>
       <Text fontSize="2xl" color="white" align="center" maxW="75vh">
-        I am a recent graduate from the University of Washington (June 2023) where I studied Electrical 
+        Hello! I am a recent graduate from the University of Washington (June 2023) where I studied Electrical 
         and Computer Engineering. I am currently seeking full time roles in Software Engineering! This
         website is a highlight of some of my projects and experiences.
       </Text>
@@ -71,6 +70,9 @@ const LandingSection = () => (
           <Button colorScheme="white" variant='outline' size="lg">{social.title}</Button>
         </a>
       ))}
+      <a href="../images/Resume_Ryan_Ching_SWE.pdf" download="resume_ryan_ching.pdf">
+          <Button colorScheme="white" variant='outline' size="lg">Resume</Button>
+        </a>
     </HStack>
     
   </FullScreenSection>

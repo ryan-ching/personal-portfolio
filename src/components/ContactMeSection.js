@@ -43,11 +43,13 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#000000"
-      py={16}
-      spacing={8}
+      backgroundColor="black"
+      // py={16}
+      // spacing={8}
+      justifyContent="center"
+      alignItems="center"
     >
-      <VStack w="1024px" p={32} alignItems="flex-start">
+      <VStack w="1024px" p={32}>
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
@@ -83,7 +85,7 @@ const LandingSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading}>
+              <Button type="submit" backgroundColor="white" width="full" isLoading={isLoading}>
                 Submit
               </Button>
             </VStack>
